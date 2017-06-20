@@ -4,22 +4,32 @@
 ```
 Pythonを利用してプロジェクトを進めていくにあたって、セットアップに
 必要と思われる事項をまとめる。
+
 １）pyenvを利用すると良いので、下記を参考にpyenvやバージョンで指定した
-Pythonのインストールする。
+Pythonのバージョンをインストールする。
 http://qiita.com/Kodaira_/items/feadfef9add468e3a85b
+
 ２）プロジェクトで必要なモジュールをpipで入れる
 jupyter、numpy、tensorflowなどを入れると良い。（tensorflowは
 バージョン違いに注意）
 ```
 
-## 設定手順
+## 設定手順(git インストール済みの状態から)
 ```
 $git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 $vim ~/.bash_profile  #下記三行を書き込み
 >export PYENV_ROOT=$HOME/.pyenv
 >export PATH=$PYENV_ROOT/bin:$PATH
 >eval "$(pyenv init -)"
-pyenv install anaconda3-4.3.0   #pythonのバージョンを指定してインストール
-pyenv local anaconda3-4.3.0
-pip install -r requirement.txt
+$pyenv install anaconda3-4.3.0   #pythonのバージョンを指定してインストール
+$pyenv local anaconda3-4.3.0
+$pip install -r requirement.txt  #tensorflow,chainerを追加
+```
+
+## 設定手順(gitがインストールされていない場合、MacOS)
+```
+$/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$brew install git
+
+参考：https://webkaru.net/dev/mac-homebrew-install/
 ```
